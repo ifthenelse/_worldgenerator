@@ -3,10 +3,10 @@
 tot=100
 @climates.each do |climate| %>
   <%
-  v = climate[:default] ? tot : (Math::E**(-(climate[:scale]/10000)*(climate[:distance]**2))*100).floor.to_i
+  v = climate.default ? tot : (Math::E**(-(climate.scale/10000)*(climate.distance**2))*100).floor.to_i
   tot-=v
   (1..v).each do |i| %>
-  <div class="index-zone" style="background-color:<%= climate[:color] %>;"><%= climate[:name] %>,<%= i %></div>
+  <div class="index-zone" style="background-color:<%= climate.color %>;"><%= climate.name %>,<%= i %></div>
   <% 
   end
   end %>
