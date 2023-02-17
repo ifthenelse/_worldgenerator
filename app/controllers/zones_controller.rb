@@ -26,18 +26,17 @@ class ZonesController < ApplicationController
     @z = params[:z].blank? ? 0 : params[:z].to_i
 
     #create the zone if doesn't exist
-    @zone = Zone.find_or_create_by_x_and_y_and_z(@x, @y, @z)
+    @zone = Zone.find_or_create_by(x: @x, y: @y, z: @z)
     @zone.visited=true
     @zone.save
-
 
     #get the existing climates
     @climates = []
     climates=Climate.all()
     climates.each do |climate|
-      climate[:distance] = Math::sqrt((climate.x - @zone.x)**2 + (climate.y - @zone.y)**2)
+      climate.distance = Math::sqrt((climate.x - @zone.x)**2 + (climate.y - @zone.y)**2)
     end
-    climates.keep_if {|v| v[:radius] >= v[:distance] || v[:default]}
+    climates.select {|v| v.radius >= v.distance || v.default}
     @climates=climates
 
     # #create the climate if doesn't exist
