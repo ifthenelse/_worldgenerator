@@ -34,7 +34,7 @@ gem install -g
 npm install
 ```
 
-## First setup
+## Ruby Gems
 
 ```sh
 bundle install
@@ -43,10 +43,13 @@ rake db:setup
 rake db:migrate
 ```
 
-Then in a rails console:
+Open a Rails console
 
 ```sh
-# rails c
+rails console
+```
+
+```ruby
 require 'active_record/fixtures'
 ActiveRecord::FixtureSet.create_fixtures(Rails.root.join('test', 'fixtures'), 'zones')
 ActiveRecord::FixtureSet.create_fixtures(Rails.root.join('test', 'fixtures'), 'climates')
