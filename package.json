@@ -1,0 +1,33 @@
+{
+  "name": "worldgenerator",
+  "version": "1.0.0",
+  "description": "An exploration game written in ruby, rails and node. Made to run on a raspberry.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifthenelse/_worldgenerator.git"
+  },
+  "keywords": [
+    "generative",
+    "game",
+    "procedural",
+    "exploration",
+    "nodejs",
+    "ruby-on-rails",
+    "procedural-generation"
+  ],
+  "author": "worldgenerator team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifthenelse/_worldgenerator/issues"
+  },
+  "homepage": "https://github.com/ifthenelse/_worldgenerator#readme"
+}
